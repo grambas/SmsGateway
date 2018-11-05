@@ -1,7 +1,7 @@
-# :FootballData
+# :SmsGateway
 
 
-football-data.org API Container for Laravel 5.1, 5.2
+API Container for Laravel 5.1, 5.2
 
 
 ## Requirements
@@ -31,7 +31,7 @@ add to config/app.php
 ]
 
 'aliases' => [
-  'Football' => Grambas\SmsGateway\Facades\SmsGatewayFacade::class,
+  'SmsGateway' => Grambas\SmsGateway\Facades\SmsGatewayFacade::class,
 ]
 ```
 
@@ -48,7 +48,7 @@ add to config/app.php
  * @param array $filter [ 'competitions' => 'Integer /[0-9]+/', 'dateFrom' => 'yyyy-MM-dd', 'dateTo' => 'yyyy-MM-dd', 'status' => 'SCHEDULED | LIVE | IN_PLAY | PAUSED | FINISHED | POSTPONED | SUSPENDED | CANCELED' ]
  * @return Collection
  */
-Football::getMatches(array $filter = [ 'competitions' => '', 'dateFrom' => '', 'dateTo' => '', 'status' => '' ])
+SmsGateway::getMatches(array $filter = [ 'competitions' => '', 'dateFrom' => '', 'dateTo' => '', 'status' => '' ])
 
 /**
  * Show one particular match.	
@@ -56,7 +56,7 @@ Football::getMatches(array $filter = [ 'competitions' => '', 'dateFrom' => '', '
  * @param integer $matchID
  * @return Collection
  */
-Football::getMatche(int $matchID)
+FSmsGateway::getMatche(int $matchID)
 
 ```
 
