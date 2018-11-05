@@ -1,13 +1,13 @@
 {
-    "name": "grambas/football-data",
+    "name": "grambas/SmsGateway",
     "type": "library",
     "minimum-stability": "dev",
-    "description": "football-data.org API container for Laravel 5.2",
+    "description": "API container for Laravel 5.2",
     "keywords": [
         "grambas",
         "footbal-data"
     ],
-    "homepage": "https://github.com/grambas/football-data",
+    "homepage": "https://github.com/grambas/SmsGateway",
     "license": "MIT",
     "authors": [
         {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Grambas\\FootballData\\": "src"
+            "Grambas\\SmsGateway\\": "src"
         }
     }
 }
