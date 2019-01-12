@@ -1,7 +1,7 @@
 # :SmsGateway
 
 
-API Container for Laravel 5.*
+Basic https://gatewayapi.com/ API Container for Laravel 5.*
 
 
 ## Requirements
