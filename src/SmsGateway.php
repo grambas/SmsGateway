@@ -80,4 +80,5 @@ class SmsGateway
         $response = $this->client->request('GET', 'me', ['http_errors' => false]);
 
         return json_decode($response->getBody(), true);
-   
+    }
+}
