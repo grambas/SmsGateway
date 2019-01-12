@@ -1,7 +1,7 @@
 # :SmsGateway
 
 
-API Container for Laravel 5.1, 5.2
+API Container for Laravel 5.*
 
 
 ## Requirements
@@ -19,47 +19,28 @@ $ composer require grambas/SmsGateway dev-master
 ## Usage
 
 
-Add your api key to env. file
+Simple example to send sms
+```
+$client = new GatewayApiCom( 'API KEY','SECRET KEY'); // init client with api key and secret
+$response = $client->send('SENDER NAME', '048139381038', 'Message content'); //send sms with paramters: sender name, phone nunbmer and message
+
+if (  isset($response['ids']) ) { // if message is sent, then the system generates id. So if id exist, then the message is successfuly snent
+    return "Message successfuly sent!  Cost: " . $response['usage']['total_cost'] . ' ' . $response['usage']['currency'];
+}else{
+    return 'Error acquired during sending message';
+}
 
 ```
-FootballData_API_KEY=
-```
-add to config/app.php 
+
+Check balance
+
 ``` 
-'providers' => [
-  Grambas\SmsGateway\SmsGatewayServiceProvider::class,
-]
+$client = new GatewayApiCom( 'API KEY','SECRET KEY');
+$check = $client->me();
+return 'New balance: ' . $check['credit']  . ' ' . $check['currency'];
 
-'aliases' => [
-  'SmsGateway' => Grambas\SmsGateway\Facades\SmsGatewayFacade::class,
-]
-```
-
-## Examples
-```php
-
-
-
-##FIXTURES/MATCHES
-
-/**
- * List matches across (a set of) competitions.	
- *
- * @param array $filter [ 'competitions' => 'Integer /[0-9]+/', 'dateFrom' => 'yyyy-MM-dd', 'dateTo' => 'yyyy-MM-dd', 'status' => 'SCHEDULED | LIVE | IN_PLAY | PAUSED | FINISHED | POSTPONED | SUSPENDED | CANCELED' ]
- * @return Collection
- */
-SmsGateway::getMatches(array $filter = [ 'competitions' => '', 'dateFrom' => '', 'dateTo' => '', 'status' => '' ])
-
-/**
- * Show one particular match.	
- *
- * @param integer $matchID
- * @return Collection
- */
-FSmsGateway::getMatche(int $matchID)
 
 ```
-
 
 ## License
 
